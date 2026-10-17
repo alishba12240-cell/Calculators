@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-grey-50">
+    <div class="max-w-2xl mx-auto mt-16 p-8 border-2 border-indigo-400 rounded-xl shadow-md">
+    
+    <!--Heading-->
+    <h1 class="text-center font-bold text-4xl mb-4">
+    Calculator
+    </h1>
+        
+    <br><br>
+    <!--First Number-->
+    <input type="number"
+    id="firstNumber"
+    placeholder = "Enter First Marks"
+    class="w-full border-2 border-indigo-400 rounded-xl p-4 text-lg mb-5">
+    <br><br>
+
+    <!--Second Number-->
+    <input type="number"
+    id="secondNumber"
+    placeholder = "Enter Second Marks"
+    class="w-full border-2 border-indigo-400 rounded-xl p-4 text-lg mb-5">
+    <br><br>
+
+    <div class= "flex justify-center gap-7 mt-16">
+    <button onclick="add()"
+    class="border-2 border-indigo-400 rounded-xl w-20 h-20 text-2xl hover:bg-indigo-100">
+    +
+    </button>
+    <button onclick="subtract()"
+     class="border-2 border-indigo-400 rounded-xl w-20 h-20 text-2xl hover:bg-indigo-100">
+     -
+    </button>
+    <button onclick="multiply()" 
+     class="border-2 border-indigo-400 rounded-xl w-20 h-20 text-2xl hover:bg-indigo-100">
+     *
+    </button>
+    <button onclick="division()"
+     class="border-2 border-indigo-400 rounded-xl w-20 h-20 text-2xl hover:bg-indigo-100">
+     /
+    </button>
+    <br>
+    </div>
+
+    <!-- Result Box -->
+
+    <h2 id="result"
+    class="text-center font-bold text-2xl mt-8 p-5 border-2 border-indigo-400 rounded-xl bg-indigo-50 shadow-md">
+    Result:
+    </h2>
+
+
+    </div>
+    <script>
+        function add(){
+            let num1 = Number(document.getElementById("firstNumber").value);
+            let num2 = Number(document.getElementById("secondNumber").value);
+
+            let answer = num1 + num2;
+
+            document.getElementById("result").innerHTML="Result: " + answer;
+        }
+
+         function subtract(){
+            let num1 = Number(document.getElementById("firstNumber").value);
+            let num2 = Number(document.getElementById("secondNumber").value);
+
+            let answer = num1 - num2;
+
+            document.getElementById("result").innerHTML="Result: " + answer;
+        }
+
+         function multiply(){
+            let num1 = Number(document.getElementById("firstNumber").value);
+            let num2 = Number(document.getElementById("secondNumber").value);
+
+            let answer = num1 * num2;
+
+            document.getElementById("result").innerHTML="Result: " + answer;
+        }
+
+         function division(){
+            let num1 = Number(document.getElementById("firstNumber").value);
+            let num2 = Number(document.getElementById("secondNumber").value);
+
+            if(num2 == 0){
+                document.getElementById("result").innerHTML="Result: Cannot be divide by zero";
+                return 0;
+            }
+
+            let answer = num1 / num2;
+
+            document.getElementById("result").innerHTML="Result: " + answer;
+        }
+    </script>
+
+</body>
+</html>
